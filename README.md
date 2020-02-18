@@ -28,6 +28,8 @@ $mirrorList = array(
 
 ## 镜像列表
 
-Github 源: 
+Github 源: https://raw.githubusercontent.com/kengwang/Multicraft-Shell-Mirror/master/muallver/
+
+码云(中国): https://gitee.com/kengwang/Multicraft-Shell-Mirror/raw/master/
 
 Kengwang OSS源: https://multicraftshell.oss-cn-beijing.aliyuncs.com/muallver/
