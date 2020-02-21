@@ -360,10 +360,10 @@ function InstallYum() {
   yum clean all
   yum makecache
   yum -y update
-  yum -y install java-1.8.0-openjdk java-1.7.0-openjdk java-11-openjdk vim unzip zip wget gcc gcc-c++ kernel-devel httpd php nano php-gd php-ldap php-odbc php-pear php-xml php-xmlrpc php sed httpd-manual mod_ssl vim
+  yum -y install java-1.8.0-openjdk java-1.7.0-openjdk php-mysql java-11-openjdk vim unzip zip wget gcc gcc-c++ kernel-devel httpd php nano php-gd php-ldap php-odbc php-pear php-xml php-xmlrpc sed httpd-manual mod_ssl
   if [[ $? -ne 0 ]]; then
     ThrowError "必要组件安装失败,请检查报错,如无伤大雅可继续以便重试"
-    yum -y install java-1.8.0-openjdk java-11-openjdk vim unzip zip wget gcc gcc-c++ kernel-devel httpd php nano php-gd php-ldap php-odbc php-pear php-xml php-xmlrpc php sed httpd-manual mod_ssl vim
+    yum -y install java-1.8.0-openjdk java-11-openjdk php-mysql vim unzip zip wget gcc gcc-c++ kernel-devel httpd php nano php-gd php-ldap php-odbc php-pear php-xml php-xmlrpc sed httpd-manual mod_ssl
   fi
 }
 
