@@ -615,7 +615,7 @@ function ThrowError() {
 # 升级脚本
 function Shell_Update() {
   echo -e "${Info} 正在下载最新版脚本"
-  wget -O multicraft.sh "https://multicraftshell.oss-cn-beijing.aliyuncs.com/multicraft.sh"
+  wget -O multicraft.sh "https://mush.tysv.top/multicraft.sh"
   chmod 755 multicraft.sh
   bash multicraft.sh
   stty erase ^?
@@ -685,7 +685,7 @@ function Submenu_MySQL() {
 "
 
   read -p "请输入编号 [0-3]: " num
-  case $num in
+  case ${num} in
   1)
     Mysql_Restart
     ;;
