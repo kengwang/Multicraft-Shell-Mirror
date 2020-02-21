@@ -13,7 +13,7 @@ $fl = array(
 );
 $mirrorList = array(
     array('name' => 'Github - 同步于脚本更新 [更新速度快/国内下载速度慢](Github.com)', 'url' => 'https://raw.githubusercontent.com/kengwang/Multicraft-Shell-Mirror/master/muallver/'),
-    array('name' => 'Gitee - 同步于Github更新 [更新速度快/国内下载速度将就](Gitee.com)', 'url' => 'https://gitee.com/kengwang/Multicraft-Shell-Mirror/raw/master/muallver/'),
+    //array('name' => 'Gitee - 同步于Github更新 [更新速度快/国内下载速度将就](Gitee.com)', 'url' => 'https://gitee.com/kengwang/Multicraft-Shell-Mirror/raw/master/muallver/'),
     array('name' => 'Kengwang的阿里云OSS - [稳定/高速/请赞助!] (oss-beijing.aliyuncs.com)', 'url' => 'https://multicraftshell.oss-cn-beijing.aliyuncs.com/muallver/'),
     array('name' => 'Multicraft 官方 - !仅支持下载最新版', 'url' => 'http://multicraft.org/files/','mu'=>true)
 );
