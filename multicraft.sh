@@ -266,6 +266,7 @@ function realinstallmu() {
   chmod 555 "$MC_DIR/launcher/launcher"
   chown -R "$MC_USER":"$MC_USER" "$MC_DIR/jar"
   chown -R "$MC_USER":"$MC_USER" "$MC_DIR/scripts"
+  chown -R "$MC_USER":"$MC_USER" "$MC_DIR/ssl"
   chmod 555 "$MC_DIR/scripts/getquota.sh"
   chown -R "$MC_USER":"$MC_USER" "$MC_DIR/templates"
   chown "$MC_USER":"$MC_USER" "$MC_DIR/default_server.conf.dist"
@@ -306,6 +307,27 @@ function realinstallmu() {
     echo -e "* 注意: 网页面板不会安装到这台机子"
   fi
 
+  echo "正在设置SELinux"
+  echo
+  # SELinux related settings
+  CHCON="$(which chcon 2>/dev/null)"
+  RESTORECON="$(which restorecon 2>/dev/null)"
+  SETSEBOOL="$(which setsebool 2>/dev/null)"
+  if [ ! "$CHCON" = "" -a ! "$RESTORECON" = "" -a ! "$SETSEBOOL" = "" ]; then
+    echo -n "正在应用SELinux设置... "
+    {
+      $RESTORECON -R "$MC_WEB_DIR"
+      $CHCON -R --type=httpd_sys_rw_content_t "$MC_WEB_DIR/assets"
+      $CHCON -R --type=httpd_sys_rw_content_t "$MC_WEB_DIR/protected/config"
+      $CHCON -R --type=httpd_sys_rw_content_t "$MC_WEB_DIR/protected/data"
+      $CHCON -R --type=httpd_sys_rw_content_t "$MC_WEB_DIR/protected/runtime"
+      if [ "$MC_DB_TYPE" = "sqlite" ]; then
+        $CHCON -R --reference="$MC_WEB_DIR/assets" "$MC_DIR/data/data.db"
+      fi
+      $SETSEBOOL -P httpd_can_network_connect 1
+    } 2>/dev/null
+    echo "设置成功"
+  fi
   echo -e "尝试运行来设置权限"
   "$MC_DIR/bin/multicraft" set_permissions
 
