@@ -9,7 +9,9 @@ $fl = array(
     array('file' => 'Linux64/multicraft-2.3.1-64.tar.gz', 'filename' => '2.3.1'),
     array('file' => 'Linux64/multicraft-2.3.2-64.tar.gz', 'filename' => '2.3.2'),
     array('file' => 'Linux64/multicraft-2.3.3-64.tar.gz', 'filename' => '2.3.3'),
-    array('file' => 'Linux64/multicraft-2.3.4-64.tar.gz', 'filename' => '2.3.4')
+    array('file' => 'Linux64/multicraft-2.3.4-64.tar.gz', 'filename' => '2.3.4'),
+    array('file' => 'Linux64/multicraft-2.3.5-64.tar.gz', 'filename' => '2.3.5')
+
 );
 $mirrorList = array(
     array('name' => 'Github - 同步于脚本更新 [更新速度快/国内下载速度慢](Github.com)', 'url' => 'https://raw.githubusercontent.com/kengwang/Multicraft-Shell-Mirror/master/muallver/'),
